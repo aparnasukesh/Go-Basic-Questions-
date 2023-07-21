@@ -1,0 +1,8 @@
+go 1.18
+
+use (
+	"./Hello World"
+	./Assignment-01
+	./Assignment-02
+	./Assignment-03
+)
