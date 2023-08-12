@@ -2,6 +2,7 @@ go 1.18
 
 use (
 	"./Hello World"
+	"./Interface "
 	./Assignment-01
 	./Assignment-02
 	./Assignment-03
@@ -27,4 +28,7 @@ use (
 	./Assignment-23
 	./Assignment-24
 	./Assignment-25
+	./Channels
+	./Example
+	./Goroutines
 )
