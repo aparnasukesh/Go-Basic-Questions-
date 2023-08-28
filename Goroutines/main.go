@@ -2,23 +2,28 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"sync"
 )
 
 func main() {
-	go number()
-	time.Sleep(time.Millisecond)
-	go name()
-	time.Sleep(time.Millisecond)
+
+	var wg sync.WaitGroup
+
+	wg.Add(2)
+
+	go a(&wg)
+	go b(&wg)
+
+	wg.Wait()
 
 }
-func number() {
-	for i := 0; i < 5; i++ {
-		fmt.Println(i)
-	}
+
+func a(c *sync.WaitGroup) {
+	defer c.Done()
+	fmt.Println("a")
 }
-func name() {
-	for i := 0; i < 5; i++ {
-		fmt.Println("Heii")
-	}
+
+func b(c *sync.WaitGroup) {
+	defer c.Done()
+	fmt.Println("b")
 }
